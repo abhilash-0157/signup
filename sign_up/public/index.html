@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <!-- Material UI CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.14.0/umd/material-ui.development.js">
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and Material UI JS -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emotion/react@11.11.1/dist/emotion-react.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emotion/styled@11.11.0/dist/emotion-styled.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mui/material@5.14.0/umd/material-ui.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mui/icons-material@5.14.0/umd/material-icons.umd.min.js"></script>
+
+  <script type="text/babel">
+    const { 
+      Box, 
+      Typography, 
+      TextField, 
+      Button, 
+      Checkbox, 
+      FormControlLabel,
+      Container 
+    } = MaterialUI;
+
+    function App() {
+      return (
+        <Container maxWidth="sm">
+          <Box sx={{ mt: 8, p: 4, boxShadow: 3, borderRadius: 2 }}>
+            <Typography variant="h4" gutterBottom align="center">
+              Sign in
+            </Typography>
+            <Typography variant="body1" color="text.secondary" gutterBottom align="center">
+              Please login to continue to your account.
+            </Typography>
+
+            <TextField
+              fullWidth
+              label="Email"
+              placeholder="jonas.kahnwald@gmail.com"
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              type="password"
+              margin="normal"
+              variant="outlined"
+            />
+
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Keep me logged in"
+              sx={{ mt: 1 }}
+            />
+
+            <Button
+              fullWidth
+              variant="contained"
+              size="large"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign in
+            </Button>
+          </Box>
+        </Container>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
